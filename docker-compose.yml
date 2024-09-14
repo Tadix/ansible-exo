@@ -1,0 +1,29 @@
+services:
+  ubuntu1:
+    build:
+      dockerfile: ./Dockerfile-ubuntu
+    container_name: ubuntu1
+    command: tail -f sleep 500000
+
+  ubuntu2:
+    build:
+      dockerfile: ./Dockerfile-ubuntu
+    container_name: ubuntu2
+    command: tail -f sleep 500000
+
+  centos:
+    build:
+      dockerfile: ./Dockerfile-centos
+    container_name: centos
+    command: tail -f sleep 500000
+
+
+  ansible:
+    build:
+      dockerfile: ./Dockerfile-ansible
+    container_name: ansible
+    command: tail -f sleep 500000
+    volumes:
+      - ./exo_ansible:/ansible
+
+
